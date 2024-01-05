@@ -19,9 +19,5 @@ namespace TasksManager.Model
             throw new NotImplementedException();
         }
 
-        internal override bool RealizarLogin()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -40,7 +40,7 @@ namespace TasksManager.Repository
         {
             try
             {
-                ListaDeUsuarios.RemoveAll(usuario => usuario._cpf == cpf);
+                ListaDeUsuarios.RemoveAll(usuario => usuario.cpf == cpf);
                 return true;
             }
             catch (Exception e)
@@ -50,7 +50,7 @@ namespace TasksManager.Repository
             }
         }
 
-        internal static Usuario BuscarUsuarioById(string cpf) => ListaDeUsuarios.FirstOrDefault(usuario => usuario._cpf == cpf);
+        internal static Usuario BuscarUsuarioById(string cpf) => ListaDeUsuarios.FirstOrDefault(usuario => usuario.cpf == cpf);
 
         internal static List<Usuario> ListarTodosUsuarios() 
         {

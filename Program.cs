@@ -1,4 +1,5 @@
 ﻿using TasksManager.Controller;
+using TasksManager.Security;
 
 namespace TasksManager
 {
@@ -7,7 +8,11 @@ namespace TasksManager
         static void Main(string[] args)
         {
             UsuarioController.ListarTodosUsuarios();
+            
             TarefaController.ListarTodasTarefas();
+
+            Sessao.RealizarLogin();
+
         }
     }
 }
