@@ -10,8 +10,8 @@ namespace TasksManager.Model
 {
     internal abstract class Usuario
     {
-        private string _nome { get; set; }
-        private Cargo _cargo { get; set; }
+        internal string _nome { get; set; }
+        internal Cargo _cargo { get; set; }
         internal string _cpf { get; private set; }
 
         internal Usuario(string nome, string cpf, Cargo cargo)
@@ -24,5 +24,13 @@ namespace TasksManager.Model
         internal abstract Tarefa CriarTarefa();
 
         internal abstract bool RealizarLogin();
+
+        public override string ToString()
+        {
+            return $"CPF: {_cpf}\n" +
+                $"Nome: {_nome}\n" +
+                $"Cargp: {_cargo}\n";
+        }
+
     }
 }

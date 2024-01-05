@@ -34,7 +34,7 @@ namespace TasksManager.Model
                 $"Responsável: {_responsavel}\n" +
                 $"Criada em: {_criacao}\n" +
                 $"Concluida em: {_conclusao}\n" +
-                $"Situação: {_estado}";
+                $"Situação: {_estado}\n";
         }
     }
 }

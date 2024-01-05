@@ -1,10 +1,13 @@
-﻿namespace TasksManager
+﻿using TasksManager.Controller;
+
+namespace TasksManager
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            UsuarioController.ListarTodosUsuarios();
+            TarefaController.ListarTodasTarefas();
         }
     }
 }

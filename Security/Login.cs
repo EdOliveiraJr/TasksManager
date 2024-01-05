@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TasksManager.Controller
+namespace TasksManager.Security
 {
-    internal class TechLeaderController
+    internal static class Login
     {
+
     }
 }

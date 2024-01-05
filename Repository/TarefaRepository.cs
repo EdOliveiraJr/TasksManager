@@ -7,11 +7,15 @@ using TasksManager.Model;
 
 namespace TasksManager.Repository
 {
-    internal class TarefaRepository
+    internal static class TarefaRepository
     {
-        private List<Tarefa> ListaDeTarefas = new List<Tarefa>();
+        private static List<Tarefa> ListaDeTarefas = new List<Tarefa>()
+        { 
+            new Tarefa(null,null,"Tarefa 1", "Descrição 1"),
+            new Tarefa(null,null,"Tarefa 2", "Descrição 2"),
+        };
 
-        internal bool AdicionarTarefa(Tarefa tarefa)
+        internal static bool AdicionarTarefa(Tarefa tarefa)
         {
                  
             if(tarefa != null)
@@ -31,7 +35,7 @@ namespace TasksManager.Repository
             
         }
 
-        internal bool RemoverTarefa(Guid id)
+        internal static bool RemoverTarefa(Guid id)
         {
             try
             {
@@ -44,5 +48,13 @@ namespace TasksManager.Repository
                 return false;
             }
         }
+
+        internal static Tarefa BuscarTarefaById(Guid id) => ListaDeTarefas.FirstOrDefault(tarefa => tarefa._id == id);
+
+        internal static List<Tarefa> ListarTodasTarefas()
+        {
+            return ListaDeTarefas;
+        }
     }
 }
+
