@@ -17,6 +17,12 @@ namespace TasksManager.Controller
             return usuario;
         }
 
+        internal static Usuario BuscarUsuarioByNome(string nome)
+        {
+            Usuario usuario = UsuarioRepository.BuscarUsuarioByNome(nome);
+            return usuario;
+        }
+
         internal static void ListarTodosUsuarios()
         {
             var usuarios = UsuarioRepository.ListarTodosUsuarios();

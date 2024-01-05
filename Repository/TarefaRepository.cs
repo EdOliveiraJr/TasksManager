@@ -9,7 +9,7 @@ namespace TasksManager.Repository
 {
     internal static class TarefaRepository
     {
-        private static List<Tarefa> ListaDeTarefas = new List<Tarefa>()
+        private static List<Tarefa> ListaDeTarefas = new()
         { 
             new Tarefa(null,null,"Tarefa 1", "Descrição 1"),
             new Tarefa(null,null,"Tarefa 2", "Descrição 2"),

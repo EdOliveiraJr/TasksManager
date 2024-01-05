@@ -10,7 +10,7 @@ namespace TasksManager.Repository
 {
     internal static class UsuarioRepository
     {
-        private static List<Usuario> ListaDeUsuarios = new List<Usuario>() 
+        private static List<Usuario> ListaDeUsuarios = new() 
         { 
             new TechLeader("Edvaldo", "01816219320", Cargo.TechLeader),
             new Desenvolvedor("Tainá", "00011122233", Cargo.Desenvolvedor),
@@ -50,11 +50,19 @@ namespace TasksManager.Repository
             }
         }
 
-        internal static Usuario BuscarUsuarioById(string cpf) => ListaDeUsuarios.FirstOrDefault(usuario => usuario.cpf == cpf);
+        internal static Usuario BuscarUsuarioById(string cpf)
+        {
+            return ListaDeUsuarios.FirstOrDefault(usuario => usuario.cpf == cpf);
+        }
 
         internal static List<Usuario> ListarTodosUsuarios() 
         {
             return ListaDeUsuarios;
+        }
+
+        internal static Usuario BuscarUsuarioByNome(string nome)
+        {
+            return ListaDeUsuarios.FirstOrDefault(usuario => usuario.nome == nome);
         }
     }
 }

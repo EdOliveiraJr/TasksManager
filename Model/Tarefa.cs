@@ -6,7 +6,7 @@ namespace TasksManager.Model
     {
         internal Guid _id { get; private set; }
         private string _titulo { get; set; }
-        private string _desrcicao {  get; set; }   
+        private string? _desrcicao {  get; set; }   
         private Usuario? _criador { get; set; }
         private Usuario? _responsavel { get; set; }
         private DateTime _criacao { get; set; }

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using TasksManager.Controller;
 using TasksManager.Enum;
 
 namespace TasksManager.Model
@@ -13,9 +15,12 @@ namespace TasksManager.Model
         {
         }
 
-        internal override Tarefa CriarTarefa()
+        internal override bool CriarTarefa(string titulo, string? descricao, string responsavel)
         {
-            throw new NotImplementedException();
+            responsavel = this.nome;
+
+            TarefaController.AdicionarTarefa(titulo, descricao, this.cpf, responsavel);
+            return true;
         }
 
     }

@@ -26,7 +26,7 @@ namespace TasksManager.Model
             this.Senha = cpf;
         }
 
-        internal abstract Tarefa CriarTarefa();
+        internal abstract bool CriarTarefa(string titulo, string? descricao, string responsavel);
         
         internal bool VerificaSenha(string senha)
         {

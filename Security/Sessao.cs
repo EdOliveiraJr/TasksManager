@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TasksManager.Controller;
+using TasksManager.Model;
 
 namespace TasksManager.Security
 {
     internal static class Sessao
     {
+        private static Usuario? _usuario { get; set; }
         private static bool _logado = false;
-        
+ 
         internal static bool RealizarLogin()
         {
             Console.WriteLine("Digite seu CPF: ");
@@ -19,23 +21,24 @@ namespace TasksManager.Security
             Console.WriteLine("Digite sua Senha: ");
             var senha = Console.ReadLine();
 
-            var usuario = UsuarioController.BuscarUsuarioById(cpf);       
+            _usuario = UsuarioController.BuscarUsuarioById(cpf);       
             
-            if (usuario == null)
+            if (_usuario == null)
             {
                 Console.WriteLine("Usuário ou senha inválidos");
                 return false;
             }
             else
             {
-                if(usuario.VerificaSenha(senha))
+                if(_usuario.VerificaSenha(senha))
                 {
-                    Console.WriteLine("Usuário ou senha inválidos");
+                    Console.WriteLine("Sessão iniciada!");
+                    _logado = true;
                     return true;
                 }
                 else 
                 {
-                    Console.WriteLine("Senha inválida");
+                    Console.WriteLine("Usuário ou senha inválidos");
                     return false;
                 }
             }
